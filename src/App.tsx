@@ -3,18 +3,22 @@ import './App.css';
 import { Store } from './Store';
 
 function App(): JSX.Element {
-	const {state, dispatch} = React.useContext(Store);
+	const { state, dispatch } = React.useContext(Store);
+
+	React.useEffect(() => {
+		!state.episodes.length && fetchDataAction();
+	});
 
 	const URL =
 		'https://api.tvmaze.com/singlesearch/shows?q=the-mandalorian&embed=episodes';
 	const fetchDataAction = async () => {
-		const data = await fetch(URL) 
-		const dataJSON = await data.json()
+		const data = await fetch(URL);
+		const dataJSON = await data.json();
 		return dispatch({
 			type: 'FETCH_DATA',
-			payload: dataJSON._embedded.episodes
+			payload: dataJSON._embedded.episodes,
 		});
-	}
+	};
 	return (
 		<React.Fragment>
 			<h1>Marvel collection</h1>
