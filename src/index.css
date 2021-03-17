@@ -19,6 +19,21 @@ main {
 	min-width: 100%;
 }
 
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: white;
+	border-bottom: 1px solid black;
+	padding: 1rem;
+	position: sticky;
+	top: 0;
+}
+
+header p {
+	margin: 0;
+}
+
 .episode-wrapper {
 	display: flex;
 	flex-wrap: wrap;
@@ -35,21 +50,6 @@ main {
 
 .episode-box img {
 	text-align: center;
-}
-
-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	background: white;
-	border-bottom: 1px solid black;
-	padding: 1rem;
-	position: sticky;
-	top: 0;
-}
-
-header p {
-	margin: 0;
 }
 
 @media screen and (max-width: 640px) {
