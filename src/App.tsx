@@ -31,9 +31,14 @@ function App(): JSX.Element {
 			payload: dataJSON._embedded.episodes,
 		});
 	};
+
+	const toggleFavAction = (episode: IEpisode) =>
+		dispatch({
+			type: 'ADD_FAVORITE',
+			payload: episode,
+		});
 	return (
 		<main>
-			{console.log(state.episodes)}
 			<header>
 				<h1>The mandalorian</h1>
 				<p>Pick your favorite episodes</p>
@@ -49,11 +54,19 @@ function App(): JSX.Element {
 							/>
 
 							<h4>{episode.name}</h4>
-							<small
-								dangerouslySetInnerHTML={{
-									__html: episode.summary,
-								}}
-							/>
+							<section>
+								<small
+									dangerouslySetInnerHTML={{
+										__html: episode.summary,
+									}}
+								/>
+								<button
+									type='button'
+									onClick={() => toggleFavAction(episode)}
+								>
+									favorites
+								</button>
+							</section>
 						</article>
 					);
 				})}
