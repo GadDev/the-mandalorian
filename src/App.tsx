@@ -12,8 +12,8 @@ function App(): JSX.Element {
 		const dataJSON = await data.json()
 		return dispatch({
 			type: 'FETCH_DATA',
-			payload: dataJSON
-		})
+			payload: dataJSON._embedded.episodes
+		});
 	}
 	return (
 		<React.Fragment>
