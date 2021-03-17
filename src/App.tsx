@@ -43,22 +43,13 @@ function App(): JSX.Element {
 				{state.episodes.map((episode: IEpisode) => {
 					return (
 						<article key={episode.id} className='episode-box'>
-							<div style={{ textAlign: 'center' }}>
-								<img
-									src={episode.image.medium}
-									alt={`The Mandalorian ${episode.name}`}
-								/>
-							</div>
+							<img
+								src={episode.image.medium}
+								alt={`The Mandalorian ${episode.name}`}
+							/>
 
-							<h3
-								style={{
-									textAlign: 'center',
-									marginTop: '5px',
-								}}
-							>
-								{episode.name}
-							</h3>
-							<p
+							<h4>{episode.name}</h4>
+							<small
 								dangerouslySetInnerHTML={{
 									__html: episode.summary,
 								}}
