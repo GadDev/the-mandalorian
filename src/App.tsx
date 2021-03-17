@@ -2,12 +2,12 @@ import React from 'react';
 import './App.css';
 import { Store } from './Store';
 
-interface Episode {
+interface IEpisode {
 	id: number;
 	name: string;
 	summary: string;
 	image: Image;
-};
+}
 
 type Image = {
 	medium: string;
@@ -32,26 +32,17 @@ function App(): JSX.Element {
 		});
 	};
 	return (
-		<main
-			style={{
-				padding: '2rem',
-				textAlign: 'center',
-			}}
-		>
+		<main>
 			{console.log(state.episodes)}
-			<h1>The mandalorian</h1>
-			<p>Pick your favorite episodes</p>
-			<section
-				style={{
-					display: 'grid',
-					gridTemplateColumns: 'repeat(4, 1fr [col-start])',
-					gridAutoRows: 'grid-template-rows: 25% 100px auto',
-					padding: '2rem',
-				}}
-			>
-				{state.episodes.map((episode: Episode) => {
+			<header>
+				<h1>The mandalorian</h1>
+				<p>Pick your favorite episodes</p>
+			</header>
+
+			<section className='episode-wrapper'>
+				{state.episodes.map((episode: IEpisode) => {
 					return (
-						<article key={episode.id}>
+						<article key={episode.id} className='episode-box'>
 							<div style={{ textAlign: 'center' }}>
 								<img
 									src={episode.image.medium}
