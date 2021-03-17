@@ -6,7 +6,7 @@ function App(): JSX.Element {
 	const { state, dispatch } = React.useContext(Store);
 
 	React.useEffect(() => {
-		!state.episodes.length && fetchDataAction();
+		state.episodes.length === 0 && fetchDataAction();
 	});
 
 	const URL =
@@ -21,6 +21,7 @@ function App(): JSX.Element {
 	};
 	return (
 		<React.Fragment>
+			{console.log(state)}
 			<h1>Marvel collection</h1>
 			<p>Pick your favorite character</p>
 		</React.Fragment>
