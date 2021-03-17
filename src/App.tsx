@@ -2,6 +2,18 @@ import React from 'react';
 import './App.css';
 import { Store } from './Store';
 
+interface Episode {
+	id: number;
+	name: string;
+	summary: string;
+	image: Image;
+};
+
+type Image = {
+	medium: string;
+	original: string;
+};
+
 function App(): JSX.Element {
 	const { state, dispatch } = React.useContext(Store);
 
@@ -26,7 +38,8 @@ function App(): JSX.Element {
 				textAlign: 'center',
 			}}
 		>
-			<h1>the mandalorian</h1>
+			{console.log(state.episodes)}
+			<h1>The mandalorian</h1>
 			<p>Pick your favorite episodes</p>
 			<section
 				style={{
@@ -36,7 +49,7 @@ function App(): JSX.Element {
 					padding: '2rem',
 				}}
 			>
-				{state.episodes.map((episode: any) => {
+				{state.episodes.map((episode: Episode) => {
 					return (
 						<article key={episode.id}>
 							<div style={{ textAlign: 'center' }}>
@@ -54,6 +67,11 @@ function App(): JSX.Element {
 							>
 								{episode.name}
 							</h3>
+							<p
+								dangerouslySetInnerHTML={{
+									__html: episode.summary,
+								}}
+							/>
 						</article>
 					);
 				})}
