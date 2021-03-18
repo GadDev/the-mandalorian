@@ -4,13 +4,6 @@ import { Store } from './Store';
 
 import { IAction, IEpisode } from './interfaces';
 
-
-
-type Image = {
-	medium: string;
-	original: string;
-};
-
 function App(): JSX.Element {
 	const { state, dispatch } = React.useContext(Store);
 
