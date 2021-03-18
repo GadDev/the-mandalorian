@@ -1,8 +1,7 @@
 import React from 'react';
 import './App.css';
-import { Store } from './Store';
+import { Store, IAction } from './Store';
 
-import { IAction } from './Store'
 
 interface IEpisode {
 	id: number;
