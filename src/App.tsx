@@ -2,14 +2,9 @@ import React from 'react';
 import './App.css';
 import { Store } from './Store';
 
-import { IAction } from './interfaces';
+import { IAction, IEpisode } from './interfaces';
 
-interface IEpisode {
-	id: number;
-	name: string;
-	summary: string;
-	image: Image;
-}
+
 
 type Image = {
 	medium: string;
