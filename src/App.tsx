@@ -23,13 +23,13 @@ function App(): JSX.Element {
 	};
 
 	const toggleFavAction = (episode: IEpisode): IAction => {
-		console.log(state);
+		const episodeInFav = state.favourites.includes(episode);
 		return dispatch({
 			type: 'ADD_FAVORITE',
 			payload: episode,
 		});
 	};
-
+	console.log(state);
 	return (
 		<main>
 			<header>
