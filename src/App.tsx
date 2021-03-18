@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import { Store } from './Store';
 
+import { IAction } from './Store'
+
 interface IEpisode {
 	id: number;
 	name: string;
@@ -32,7 +34,7 @@ function App(): JSX.Element {
 		});
 	};
 
-	const toggleFavAction = (episode: IEpisode) =>
+	const toggleFavAction = (episode: IEpisode): IAction =>
 		dispatch({
 			type: 'ADD_FAVORITE',
 			payload: episode,
