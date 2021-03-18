@@ -30,9 +30,12 @@ function App(): JSX.Element {
 		};
 
 		if (episodeInFavourite) {
+			const favouriteWithoutEpisode = state.favourites.filter(
+				(fav: IEpisode) => fav.id !== episode.id
+			);
 			dispatchObj = {
 				type: 'REMOVE_FAVORITE',
-				payload: episode,
+				payload: favouriteWithoutEpisode,
 			};
 		}
 		return dispatch(dispatchObj);
