@@ -13,7 +13,7 @@ function reducer(state: IState, action: IAction): IState {
 	switch (action.type) {
 		case 'FETCH_DATA':
 			return { ...state, episodes: action.payload };
-		case 'ADD_FAV':
+		case 'ADD_FAVORITE':
 			return {
 				...state,
 				favourites: [...state.favourites, action.payload],

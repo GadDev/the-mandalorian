@@ -22,11 +22,14 @@ function App(): JSX.Element {
 		});
 	};
 
-	const toggleFavAction = (episode: IEpisode): IAction =>
-		dispatch({
+	const toggleFavAction = (episode: IEpisode): IAction => {
+		console.log(state);
+		return dispatch({
 			type: 'ADD_FAVORITE',
 			payload: episode,
 		});
+	};
+
 	return (
 		<main>
 			<header>
