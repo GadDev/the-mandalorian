@@ -4,7 +4,7 @@ import { Store } from './Store';
 
 import { IAction, IEpisode } from './interfaces';
 
-import EpisodesList from ''
+import EpisodesList from './components/EpisodesList';
 
 function App(): JSX.Element {
 	const { state, dispatch } = React.useContext(Store);
@@ -53,35 +53,11 @@ function App(): JSX.Element {
 			</header>
 
 			<section className='episode-wrapper'>
-				{state.episodes.map((episode: IEpisode) => {
-					return (
-						<article key={episode.id} className='episode-box'>
-							<img
-								src={episode.image.medium}
-								alt={`The Mandalorian ${episode.name}`}
-							/>
-
-							<h4>{episode.name}</h4>
-							<section>
-								<small
-									dangerouslySetInnerHTML={{
-										__html: episode.summary,
-									}}
-								/>
-								<button
-									type='button'
-									onClick={() => toggleFavAction(episode)}
-								>
-									{state.favourites.find(
-										(fav: IEpisode) => fav.id === episode.id
-									)
-										? 'Unfav'
-										: 'Fav'}
-								</button>
-							</section>
-						</article>
-					);
-				})}
+				<EpisodesList
+					episodes={state.episodes}
+					favourites={state.favourites}
+					toggleFavAction={toggleFavAction}
+				/>
 			</section>
 		</main>
 	);
