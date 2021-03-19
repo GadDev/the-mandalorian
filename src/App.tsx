@@ -40,7 +40,6 @@ function App(): JSX.Element {
 		}
 		return dispatch(dispatchObj);
 	};
-	console.log(state);
 	return (
 		<main>
 			<header>

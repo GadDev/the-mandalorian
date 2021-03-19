@@ -1,21 +1,37 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
-import { StoreProvider } from './Store';
-import { episodes } from './mocks/data/episodes';
-test('renders "The mandalorian" title', () => {
-	const value = {
-		state: {
-			episodes,
-			favourites: [],
-		},
-		dispatch: jest.fn(),
-	};
 
-	render(<App />, { wrapper: StoreProvider, ...value });
-	const title = screen.getByText(/The mandalorian/i);
-	screen.debug();
+import { episodes } from './mocks/data/episodes';
+
+let realUseContext;
+let useContextMock;
+// Setup mock
+beforeEach(() => {
+	realUseContext = React.useContext;
+	useContextMock = React.useContext = jest.fn();
+	useContextMock.mockReturnValue(
+		{ state: { episodes, favourites: [] } },
+		() => {}
+	);
+});
+// Cleanup mock
+afterEach(() => {
+	React.useContext = realUseContext;
+});
+
+test('renders "The mandalorian" title', () => {
+	render(<App />);
+	const title = screen.getByRole('heading', { name: /The mandalorian/i });
 	expect(title).toBeInTheDocument();
-	// const articles = screen.getAllByRole('article');
-	// expect(articles).toHaveLength(2);
-	screen.debug();
+});
+
+describe('renders articles', () => {
+	test('renders 2 articles', () => {
+		render(<App />);
+		const articles = screen.getAllByRole('article');
+		expect(articles).toHaveLength(2);
+	});
+
+	
 });
