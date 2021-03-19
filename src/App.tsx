@@ -43,8 +43,11 @@ function App(): JSX.Element {
 	return (
 		<main>
 			<header>
-				<h1>The mandalorian</h1>
-				<p>Pick your favorite episodes</p>
+				<div>
+					<h1>The mandalorian</h1>
+					<p>Pick your favorite episodes</p>
+				</div>
+				<div>Favourite(s) : {state.favourites.length}</div>
 			</header>
 
 			<section className='episode-wrapper'>

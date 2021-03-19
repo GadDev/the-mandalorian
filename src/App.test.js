@@ -38,8 +38,7 @@ describe('renders articles', () => {
 		const titleArticles = screen.getAllByRole('heading', { level: 4 });
 		expect(titleArticles).toHaveLength(2);
 	});
-
-	test('articles should render correct title', () => {
+	test('articles should render correctly the title', () => {
 		render(<App />);
 		const titleArticles = screen.getAllByRole('heading', { level: 4 });
 		const innerHtmlTitleArticles = titleArticles.map(
