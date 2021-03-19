@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router"
+import { Link } from 'react-router-dom';
 import { Store } from './Store';
 import { IAction, IEpisode } from './interfaces';
 import './App.css';
@@ -49,7 +49,12 @@ function App(): JSX.Element {
 					<h1>The mandalorian</h1>
 					<p>Pick your favorite episodes</p>
 				</div>
-				<div>Favourite(s) : {state.favourites.length}</div>
+				<div>
+					<Link to='/'>Home</Link>
+					<Link to='/favourites'>
+						Favourite(s) : {state.favourites.length}
+					</Link>
+				</div>
 			</header>
 			<React.Suspense fallback={<div>Loading...</div>}>
 				<section className='episode-wrapper'>
