@@ -2,9 +2,9 @@ import { IAction, IEpisode } from '../../interfaces';
 import Episode from '../Episode';
 
 type EpisodesProps = {
-	episodes: IEpisode[] | [];
+	episodes: Array<IEpisode> | [];
 	toggleFavAction: (fav: IEpisode) => IAction;
-	favourites: IEpisode[];
+	favourites: Array<IEpisode>;
 };
 
 const EpisodesList = ({
