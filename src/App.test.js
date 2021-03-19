@@ -39,5 +39,15 @@ describe('renders articles', () => {
 		expect(titleArticles).toHaveLength(2);
 	});
 
-
+	test('articles should render correct title', () => {
+		render(<App />);
+		const titleArticles = screen.getAllByRole('heading', { level: 4 });
+		const innerHtmlTitleArticles = titleArticles.map(
+			(art) => art.innerHTML
+		);
+		expect(innerHtmlTitleArticles).toEqual([
+			'Chapter 5: The Gunslinger',
+			'Chapter 8: Redemption',
+		]);
+	});
 });
