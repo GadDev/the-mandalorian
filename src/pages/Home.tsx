@@ -1,7 +1,9 @@
 import React from 'react'
+import { Store } from '../Store';
 import { IAction, IEpisode } from '../interfaces';
-export default function HomePage() => {
 
+export default function HomePage(): JSX.Element {
+	const { state, dispatch } = React.useContext(Store);
 	React.useEffect(() => {
 		state.episodes.length === 0 && fetchDataAction();
 	});
