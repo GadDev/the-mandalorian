@@ -1,15 +1,17 @@
 import React from 'react';
-import { IAction, IEpisode } from './interfaces';
+import { IAction, IEpisode } from '../interfaces';
 type EpisodesProps = {
 	episodes: IEpisode[];
 	toggleFavAction: IAction;
 	favorites: IEpisode[];
 };
 
-export default function Episodes({
+const Episodes = ({
 	episodes,
 	toggleFavAction,
 	favorites,
-}: EpisodesProps): JSX.Element {
+}: EpisodesProps): JSX.Element => {
 	return <div></div>;
-}
+};
+
+export default Episodes
