@@ -6,7 +6,7 @@ import { Image } from '../types';
 
 export interface IState {
 	episodes: Array<IEpisode>;
-	favourites: Array<any>;
+	favourites: Array<IEpisode>;
 }
 
 export interface IAction {
