@@ -5,6 +5,7 @@ type EpisodeProps = {
 	toggleFavAction: (fav: IEpisode) => IAction;
 	favourites: IEpisode[];
 };
+
 const Episode = (props: EpisodeProps): JSX.Element => {
 	const { id, name, image, summary } = props.episode;
 	return (
