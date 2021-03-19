@@ -25,7 +25,7 @@ function App(): JSX.Element {
 	const toggleFavAction = (episode: IEpisode): IAction => {
 		const episodeInFavourite = state.favourites.includes(episode);
 		let dispatchObj = {
-			type: 'ADD_FAVORITE',
+			type: 'ADD_FAVOURITE',
 			payload: episode,
 		};
 
@@ -34,7 +34,7 @@ function App(): JSX.Element {
 				(fav: IEpisode) => fav.id !== episode.id
 			);
 			dispatchObj = {
-				type: 'REMOVE_FAVORITE',
+				type: 'REMOVE_FAVOURITE',
 				payload: favouriteWithoutEpisode,
 			};
 		}
@@ -70,7 +70,11 @@ function App(): JSX.Element {
 									type='button'
 									onClick={() => toggleFavAction(episode)}
 								>
-									favorites
+									{state.favourites.find(
+										(fav: IEpisode) => fav.id === episode.id
+									)
+										? 'Unfav'
+										: 'Fav'}
 								</button>
 							</section>
 						</article>

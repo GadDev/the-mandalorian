@@ -13,10 +13,15 @@ function reducer(state: IState, action: IAction): IState {
 	switch (action.type) {
 		case 'FETCH_DATA':
 			return { ...state, episodes: action.payload };
-		case 'ADD_FAVORITE':
+		case 'ADD_FAVOURITE':
 			return {
 				...state,
 				favourites: [...state.favourites, action.payload],
+			};
+		case 'REMOVE_FAVOURITE':
+			return {
+				...state,
+				favourites: action.payload,
 			};
 		default:
 			return state;
