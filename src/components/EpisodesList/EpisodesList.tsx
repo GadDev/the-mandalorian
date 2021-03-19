@@ -1,9 +1,9 @@
-import { IEpisode } from '../../interfaces';
+import { IAction, IEpisode } from '../../interfaces';
 import Episode from '../Episode';
 
 type EpisodesProps = {
 	episodes: IEpisode[] | [];
-	toggleFavAction: any;
+	toggleFavAction: (fav: IEpisode) => IAction;
 	favourites: IEpisode[];
 };
 
