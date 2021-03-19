@@ -4,7 +4,7 @@ import { Store } from './Store';
 
 import { IAction, IEpisode } from './interfaces';
 
-import EpisodesList from './components/EpisodesList';
+const EpisodesList = React.lazy(() => import('./components/EpisodesList'))
 
 function App(): JSX.Element {
 	const { state, dispatch } = React.useContext(Store);
