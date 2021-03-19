@@ -1,16 +1,18 @@
-import { IAction, IEpisode } from '../../interfaces';
+import { IAction, IEpisode, IState } from '../../interfaces';
 import Episode from '../Episode';
 
 type EpisodesProps = {
 	episodes: Array<IEpisode> | [];
 	toggleFavAction: (fav: IEpisode) => IAction;
 	favourites: Array<IEpisode>;
+	store: { state: IState, dispatch: any}
 };
 
 const EpisodesList = ({
 	episodes,
 	toggleFavAction,
 	favourites,
+	store
 }: EpisodesProps): JSX.Element => {
 	return (
 		<>
@@ -22,6 +24,7 @@ const EpisodesList = ({
 							episode={episode}
 							favourites={favourites}
 							toggleFavAction={toggleFavAction}
+							store={store}
 						/>
 					);
 				}

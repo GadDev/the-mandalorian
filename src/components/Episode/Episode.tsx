@@ -1,13 +1,15 @@
-import { IAction, IEpisode } from '../../interfaces';
+import { IAction, IEpisode, IState } from '../../interfaces';
 
 type EpisodeProps = {
 	episode: IEpisode;
-	toggleFavAction: (fav: IEpisode) => IAction;
+	toggleFavAction: (state: any, dispatch: any, fav: IEpisode) => IAction;
 	favourites: IEpisode[];
+	store: { state: IState; dispatch: any };
 };
 
 const Episode = (props: EpisodeProps): JSX.Element => {
 	const { id, name, image, summary } = props.episode;
+	const { state, dispatch } = props.store;
 	return (
 		<article key={id} className='episode-box'>
 			<img src={image.medium} alt={`The Mandalorian ${name}`} />
@@ -21,7 +23,9 @@ const Episode = (props: EpisodeProps): JSX.Element => {
 				/>
 				<button
 					type='button'
-					onClick={() => props.toggleFavAction(props.episode)}
+					onClick={() =>
+						props.toggleFavAction(state, dispatch, props.episode)
+					}
 				>
 					{props.favourites.find((fav: IEpisode) => fav.id === id)
 						? 'Unfav'

@@ -13,8 +13,8 @@ export const fetchDataAction = async (dispatch: any) => {
 
 export const toggleFavAction = (
 	state: IState,
-	episode: any,
-	dispatch: any
+	dispatch: any,
+	episode: any
 ): IAction => {
 	const episodeInFavourite = state.favourites.includes(episode);
 	let dispatchObj = {

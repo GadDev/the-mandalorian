@@ -1,6 +1,6 @@
 import React from 'react';
 import { Store } from '../Store';
-import { IAction, IEpisode } from '../interfaces';
+import {fetchDataAction, toggleFavAction} from '../Actions'
 
 const EpisodesList = React.lazy<any>(
 	() => import('../components/EpisodesList')
@@ -8,8 +8,9 @@ const EpisodesList = React.lazy<any>(
 
 export default function HomePage(): JSX.Element {
 	const { state, dispatch } = React.useContext(Store);
+	
 	React.useEffect(() => {
-		state.episodes.length === 0 && fetchDataAction();
+		state.episodes.length === 0 && fetchDataAction(dispatch);
 	});
 
 	return (
@@ -19,6 +20,7 @@ export default function HomePage(): JSX.Element {
 					<EpisodesList
 						episodes={state.episodes}
 						favourites={state.favourites}
+						store={{state, dispatch}}
 						toggleFavAction={toggleFavAction}
 					/>
 				</section>
