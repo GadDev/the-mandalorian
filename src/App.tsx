@@ -4,6 +4,8 @@ import { Store } from './Store';
 
 import { IAction, IEpisode } from './interfaces';
 
+import EpisodesList from ''
+
 function App(): JSX.Element {
 	const { state, dispatch } = React.useContext(Store);
 

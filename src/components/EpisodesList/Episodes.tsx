@@ -1,5 +1,6 @@
-import React from 'react';
 import { IAction, IEpisode } from '../../interfaces';
+import Episode from '../Episode';
+
 type EpisodesProps = {
 	episodes: IEpisode[];
 	toggleFavAction: IAction;
@@ -11,7 +12,17 @@ const EpisodesList = ({
 	toggleFavAction,
 	favorites,
 }: EpisodesProps): Array<JSX.Element> => {
-	return <div></div>;
+	return episodes.map(
+		(episode: IEpisode): JSX.Element => {
+			return (
+				<Episode
+					episode={episode}
+					favourites={favorites}
+					toggleFavAction={toggleFavAction}
+				/>
+			);
+		}
+	);
 };
 
-export default EpisodesList
+export default EpisodesList;
