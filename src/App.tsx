@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.css';
+import { Link } from "react-router"
 import { Store } from './Store';
-
 import { IAction, IEpisode } from './interfaces';
+import './App.css';
 
 const EpisodesList = React.lazy<any>(() => import('./components/EpisodesList'));
 
