@@ -33,12 +33,12 @@ describe('renders articles', () => {
 		expect(articles).toHaveLength(2);
 	});
 
-	test('renders 2 articles title', () => {
+	test('renders 2 article titles', () => {
 		render(<App />);
 		const titleArticles = screen.getAllByRole('heading', { level: 4 });
 		expect(titleArticles).toHaveLength(2);
 	});
-	test('articles should render correctly the title', () => {
+	test('articles should render correctly the title content', () => {
 		render(<App />);
 		const titleArticles = screen.getAllByRole('heading', { level: 4 });
 		const innerHtmlTitleArticles = titleArticles.map(

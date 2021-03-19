@@ -1,10 +1,10 @@
 import React from 'react';
 import { IAction, IEpisode } from './interfaces';
 type EpisodesProps = {
-	episodes: IEpisode[],
-	toggleFavAction: IAction
-	favorites: IEpisode[] | []
-}
+	episodes: IEpisode[];
+	toggleFavAction: IAction;
+	favorites: IEpisode[];
+};
 
 export default function Episodes({
 	episodes,
