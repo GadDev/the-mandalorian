@@ -1,3 +1,5 @@
+import React from 'react'
+import { IAction, IEpisode } from '../interfaces';
 export default function HomePage() => {
 
 	React.useEffect(() => {
