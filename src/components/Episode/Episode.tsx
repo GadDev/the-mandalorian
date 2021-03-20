@@ -1,11 +1,4 @@
-import { IAction, IEpisode, IState, EpisodesProps } from '../../interfaces';
-
-type EpisodeProps = {
-	episode: IEpisode;
-	toggleFavAction: (state: any, dispatch: any, fav: IEpisode) => IAction;
-	favourites: IEpisode[];
-	store: { state: IState; dispatch: any };
-};
+import { IEpisode, EpisodeProps } from '../../interfaces';
 
 const Episode = (props: EpisodeProps): JSX.Element => {
 	const { id, name, image, summary } = props.episode;
