@@ -26,3 +26,11 @@ export interface IEpisode {
 	season: string;
 	url: string;
 }
+
+export interface EpisodesProps {
+	episodes: Array<IEpisode> | [];
+	toggleFavAction: (fav: IEpisode) => IAction;
+	favourites: Array<IEpisode>;
+	store: { state: IState; dispatch: any };
+};
+
