@@ -13,7 +13,7 @@ export interface IState {
 
 export interface IAction {
 	type: string;
-	payload: Array<IEpisode>;
+	payload: Array<IEpisode> | any;
 }
 export interface IEpisode {
 	airdate: string;
