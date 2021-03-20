@@ -1,4 +1,4 @@
-import { IAction, IEpisode, IState } from '../../interfaces';
+import { IAction, IEpisode, IState, EpisodesProps } from '../../interfaces';
 
 type EpisodeProps = {
 	episode: IEpisode;
