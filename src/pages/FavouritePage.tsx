@@ -1,6 +1,7 @@
 import React from 'react';
 import { Store } from '../Store';
 import { toggleFavAction } from '../Actions';
+
 const EpisodesList = React.lazy<any>(
 	() => import('../components/EpisodesList')
 );
