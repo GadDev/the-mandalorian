@@ -1,12 +1,6 @@
-import { IAction, IEpisode, IState } from '../../interfaces';
+import { IEpisode, EpisodesProps } from '../../interfaces';
 import Episode from '../Episode';
 
-type EpisodesProps = {
-	episodes: Array<IEpisode> | [];
-	toggleFavAction: (fav: IEpisode) => IAction;
-	favourites: Array<IEpisode>;
-	store: { state: IState, dispatch: any}
-};
 
 const EpisodesList = ({
 	episodes,
