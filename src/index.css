@@ -15,6 +15,11 @@ body {
 	background: ivory;
 }
 
+a {
+	color: black;
+	text-decoration: none;
+}
+
 main {
 	min-width: 100%;
 }
@@ -35,10 +40,8 @@ header p {
 }
 
 .menu a {
-	color: black;
 	margin: auto 5px;
 	font-weight: bold;
-	text-decoration: none;
 }
 
 .episode-wrapper {

@@ -4,8 +4,6 @@ import { Store } from './Store';
 
 import './App.css';
 
-
-
 function App(props: any): JSX.Element {
 	const { state } = React.useContext(Store);
 
@@ -13,10 +11,13 @@ function App(props: any): JSX.Element {
 		<main>
 			<header>
 				<div>
-					<h1>The mandalorian</h1>
+					<Link to='/'>
+						<h1>The mandalorian</h1>
+					</Link>
+
 					<p>Pick your favorite episodes</p>
 				</div>
-				<div className="menu">
+				<div className='menu'>
 					<Link to='/'>Home</Link>
 					<Link to='/favourites'>
 						Favourite(s) : {state.favourites.length}
