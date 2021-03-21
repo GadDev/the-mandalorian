@@ -16,7 +16,7 @@ function App(props: any): JSX.Element {
 					<h1>The mandalorian</h1>
 					<p>Pick your favorite episodes</p>
 				</div>
-				<div>
+				<div className="menu">
 					<Link to='/'>Home</Link>
 					<Link to='/favourites'>
 						Favourite(s) : {state.favourites.length}

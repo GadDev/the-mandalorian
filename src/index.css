@@ -34,6 +34,13 @@ header p {
 	margin: 0;
 }
 
+.menu a {
+	color: black;
+	margin: auto 5px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
 .episode-wrapper {
 	display: flex;
 	flex-wrap: wrap;
